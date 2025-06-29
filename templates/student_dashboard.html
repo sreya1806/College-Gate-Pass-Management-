@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="student-dashboard">
+    <div class="dashboard-container">
+        <h2>Student Dashboard</h2>
+
+        {% if requests %}
+            <h3>Your Gate Pass Requests</h3>
+            <div class="requests-container">
+                {% for req in requests %}
+                    <div class="request-box 
+                        {% if req.status == 'Accepted' %} accepted-box 
+                        {% elif req.status == 'Rejected' %} rejected-box 
+                        {% else %} pending-box 
+                        {% endif %}">
+                        
+                        <p><strong>Request Date:</strong> {{ req.request_date.strftime('%Y-%m-%d %H:%M') }}</p>
+                        <p><strong>Reason:</strong> {{ req.reason }}</p>
+                        <p><strong>Status:</strong> 
+                            {% if req.status == "Accepted" %}
+                                <span class="accepted-text">✅ Approved</span>
+                            {% elif req.status == "Rejected" %}
+                                <span class="rejected-text">❌ Rejected</span>
+                            {% else %}
+                                <span class="pending-text">⏳ Pending</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No gate pass request submitted yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('request_gatepass') }}" class="btn">Request a Gate Pass</a>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Approval</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Faculty Approval</h1>
+    <ul>
+        {% for pass in passes %}
+        <li>
+            ID: {{ pass[0] }} | Student ID: {{ pass[1] }} | Purpose: {{ pass[2] }} | Status: {{ pass[3] }}
+            <form action="/approve_pass" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="{{ pass[0] }}">
+                <button type="submit">Approve</button>
+            </form>
+            <form action="/reject_pass" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="{{ pass[0] }}">
+                <button type="submit">Reject</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

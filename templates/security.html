@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Security Verification</h1>
+    <ul>
+        {% for pass in passes %}
+        <li>
+            ID: {{ pass[0] }} | Student ID: {{ pass[1] }} | Purpose: {{ pass[2] }} | Status: {{ pass[3] }}
+            <form action="/verify_pass" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="{{ pass[0] }}">
+                <button type="submit">Verify</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Gate Pass</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+    <body class="req">
+    <div class="container">
+        <h2>Request a Gate Pass</h2>
+        <form action="{{ url_for('request_gatepass') }}" method="POST">
+            <div class="form-group">
+                <label for="roll_no">Roll Number:</label>
+                <input type="text" name="roll_no" id="roll_no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="parent_name">Parent Name:</label>
+                <input type="text" name="parent_name" id="parent_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="parent_number">Parent Number:</label>
+                <input type="tel" name="parent_number" id="parent_number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason for Leaving:</label>
+                <textarea name="reason" id="reason" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+        <br>
+        <a href="{{ url_for('student_dashboard') }}" class="back-link">Back</a>
+    </div>
+</body>
+</html>

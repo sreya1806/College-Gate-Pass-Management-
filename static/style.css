@@ -1,0 +1,519 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #333;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 10px;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.logout-btn:hover {
+    background: darkred;
+}
+/* Status Messages */
+.status {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.accepted {
+    color: white;
+    background-color: green;
+}
+
+.rejected {
+    color: white;
+    background-color: red;
+}
+
+.pending {
+    color: black;
+    background-color: orange;
+}
+/* Login Page Styling */
+.login-container {
+    width: 350px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Headings */
+.login-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Login Button */
+.btn {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    background: #8251e3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #d41717;
+}
+
+/* Register Link */
+.login-container p {
+    margin-top: 10px;
+}
+
+.login-container a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+/* Register Page Styling */
+.register-container {
+    width: 350px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Headings */
+.register-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.register-container input,
+.register-container select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Register Button */
+.btn {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+/* Login Link */
+.register-container p {
+    margin-top: 10px;
+}
+
+.register-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
+/* Flash Messages */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flash.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.flash.danger {
+    background-color: #dc3545;
+    color: white;
+}
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+/* Heading */
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button */
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+.alert {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    width: 60%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Request Box Styles */
+.requests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.request-box {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Accepted Request */
+.accepted-box {
+    background-color: #d4edda;
+    border-left: 6px solid #28a745;
+}
+
+.accepted-text {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Rejected Request */
+.rejected-box {
+    background-color: #f8d7da;
+    border-left: 6px solid #dc3545;
+}
+
+.rejected-text {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Pending Request */
+.pending-box {
+    background-color: #fff3cd;
+    border-left: 6px solid #ffc107;
+}
+
+.pending-text {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn, .logout-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #1366ca;
+    color: white;
+    width: 80%;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #a71d2a;
+}
+/* Full-page background */
+body.home {
+    background-image: url('/static/images/home1.jpg'); /* Ensure the image is in this folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 110vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Centered content box */
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    padding: 50px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+body.login-page {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/login.jpg');
+    background-size: auto 210vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+body.register-page {
+    margin: 0;
+    height: 89vh;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/register.jpg');
+    background-size: 210vh 210vh;
+    background-repeat: no-repeat;
+    background-position: bottom bottom;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Common container styles, adjust as needed */
+.login-container {
+    position: relative;
+    width: 450px;
+    margin: 100px 150px 100px left;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-color: pink;
+    overflow: hidden;
+}
+.register-container {
+    position: relative;
+    width: 450px;
+    margin: 100px 150px 100px left;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-color: pink;
+    overflow: hidden;
+}
+
+.login-container::before, .register-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 250px;
+    z-index: -1;
+}
+/* ==== Student Dashboard Page Styles ==== */
+body.student-dashboard {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/student.jpg'); /* Use your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.dashboard-container {
+    background-color: #101010; /* Dark solid background */
+    color: rgb(206, 88, 88); /* White text for contrast */
+    padding: 67px;
+    margin: 100px auto;
+    max-width: 1200px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(21, 21, 21, 0.6);
+}
+body.req {
+    background-image: url('/static/images/request.jpg'); /* your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+body {
+    background-image: url('/static/images/security.jpg'); /* your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}

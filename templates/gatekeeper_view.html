@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatekeeper View</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Approved & Rejected Requests</h2>
+        <table>
+            <tr>
+                <th>Student</th>
+                <th>Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+            {% for req in requests %}
+            {% if req.status != "Pending" %}
+            <tr>
+                <td>{{ req.student }}</td>
+                <td>{{ req.date }}</td>
+                <td>{{ req.reason }}</td>
+                <td>{{ req.status }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+        <br><a href="/dashboard">Back</a>
+    </div>
+</body>
+</html>

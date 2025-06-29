@@ -1,0 +1,18 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h2>Request a Gate Pass</h2>
+<form method="POST">
+    Roll No: <input type="text" name="roll_no" required><br>
+    DOB: <input type="date" name="dob" required><br>
+    Date of Leave: <input type="date" name="leave_date" required><br>
+    Parent Name: <input type="text" name="parent_name" required><br>
+    Parent Contact Number: <input type="text" name="parent_number" required><br>
+    Reason for Leaving: <textarea name="reason" required></textarea><br>
+    <button type="submit">Submit Request</button>
+</form>
+<a href="{{ url_for('dashboard') }}">Back</a>

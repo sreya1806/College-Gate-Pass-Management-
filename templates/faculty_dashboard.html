@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Faculty Dashboard</h2>
+        <table border="1">
+            <tr>
+                <th>Student</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            {% for req in requests %}
+            <tr>
+                <td>{{ req.student.username }}</td>
+                <td>{{ req.reason }}</td>
+                <td>{{ req.status }}</td>
+                <td>
+                    {% if req.status == "Pending" %}
+                        <a href="{{ url_for('update_request', request_id=req.id, status='Accepted') }}" class="btn accept">✅ Accept</a>
+                        <a href="{{ url_for('update_request', request_id=req.id, status='Rejected') }}" class="btn reject">❌ Reject</a>
+                    {% else %}
+                        {{ req.status }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>
